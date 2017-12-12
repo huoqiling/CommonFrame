@@ -1,0 +1,106 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    Map<String, String> androids = rootProject.ext.android;
+
+    compileSdkVersion androids.compileSdkVersion
+    buildToolsVersion androids.buildToolsVersion
+    defaultConfig {
+        applicationId androids.applicationId
+        minSdkVersion androids.minSdkVersion
+        targetSdkVersion androids.targetSdkVersion
+        versionCode androids.versionCode
+        versionName androids.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        preDexLibraries true
+        javaMaxHeapSize "4g"//越大越好
+        incremental true
+    }
+
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'MissingTranslation'
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+}
+
+dependencies {
+
+    Map<String, String> dependencies = rootProject.ext.dependencies
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    // ------------------ Android ---------
+    testCompile dependencies.junit
+    compile dependencies.supportAnnotations
+    compile dependencies.appcompat_V7
+    compile dependencies.support_V4
+    compile dependencies.design
+    compile dependencies.cardview_V7
+    compile dependencies.recyclerview_V7
+    compile dependencies.multidex
+
+    // ------------- 图片加载 -------------
+    compile dependencies.glide
+    compile dependencies.glideTransformations
+
+    // ------------- ButterKnife -------------
+    compile dependencies.butterknife
+    annotationProcessor dependencies.butterknifeCompiler
+
+    // ------------- eventBus -------------
+    compile dependencies.eventbus
+
+    // ------------- flyCo -------------
+    compile dependencies.flycoTabLayout
+
+    // ------------- BaseRecyclerViewAdapterHelper-------------
+    compile dependencies.baseRecyclerViewAdapterHelper
+
+    // ------------- json解析 -------------
+    compile dependencies.gson
+    compile dependencies.fastJson
+
+    // ------------- 弹窗-------------
+    compile dependencies.aVLoadingIndicatorView
+
+    // -------------权限询问工具-------------
+    compile dependencies.easypermissions
+
+    // ------------- 刷新控件 -------------
+    compile dependencies.tkRefreshLayout
+
+    // ------------- 网络请求 -------------
+    compile dependencies.okGo
+
+    // ------------- 轮播控件 -------------
+    compile dependencies.convenientBanner
+
+    // ------------- log打印工具 -------------
+    compile dependencies.logger
+
+}

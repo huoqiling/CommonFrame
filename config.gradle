@@ -1,0 +1,68 @@
+ext {
+
+    android = [
+            compileSdkVersion: 25,
+            buildToolsVersion: "26.0.2",
+            applicationId    : "com.custom.frame",
+            minSdkVersion    : 15,
+            targetSdkVersion : 25,
+            versionCode      : 1,
+            versionName      : "1.0.0",
+    ]
+
+    dependVersion = [
+            supportVersion: "25.3.1"
+    ]
+
+    dependencies = [
+
+            // ------------------ Android ---------
+            junit                        : "junit:junit:4.12",
+            supportAnnotations           : "com.android.support:support-annotations:${dependVersion.supportVersion}",
+            appcompat_V7                 : "com.android.support:appcompat-v7:${dependVersion.supportVersion}",
+            support_V4                   : "com.android.support:support-v4:${dependVersion.supportVersion}",
+            design                       : "com.android.support:design:${dependVersion.supportVersion}",
+            cardview_V7                  : "com.android.support:cardview-v7:${dependVersion.supportVersion}",
+            recyclerview_V7              : "com.android.support:recyclerview-v7:${dependVersion.supportVersion}",
+            multidex                     : 'com.android.support:multidex:1.0.1',
+
+            // ------------- 图片加载 -------------
+            glide                        : 'com.github.bumptech.glide:glide:3.7.0',
+            glideTransformations         : 'jp.wasabeef:glide-transformations:2.0.2',
+
+            // ------------- ButterKnife -------------
+            butterknife                  : 'com.jakewharton:butterknife:8.6.0',
+            butterknifeCompiler          : 'com.jakewharton:butterknife-compiler:8.6.0',
+
+            // ------------- eventBus -------------
+            eventbus                     : 'org.greenrobot:eventbus:3.0.0',
+
+            // ------------- flyCo -------------
+            flycoTabLayout               : 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar',
+
+            // ------------- BaseRecyclerViewAdapterHelper-------------
+            baseRecyclerViewAdapterHelper: 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22',
+
+            // ------------- json解析 -------------
+            gson                         : 'com.google.code.gson:gson:2.8.0',
+            fastJson                     : 'com.alibaba:fastjson:1.2.24',
+
+            // ------------- 弹窗-------------
+            aVLoadingIndicatorView       : 'com.wang.avi:library:2.1.3',
+
+            // -------------权限询问工具 -------------
+            easypermissions              : 'pub.devrel:easypermissions:0.4.2',
+
+            // ------------- 刷新控件 -------------
+            tkRefreshLayout              : 'com.lcodecorex:tkrefreshlayout:1.0.7',
+
+            // ------------- 网络请求 -------------
+            okGo                         : 'com.lzy.net:okgo:2.1.4',
+
+            // ------------- 轮播控件 -------------
+            convenientBanner             : 'com.bigkoo:convenientbanner:2.0.5',
+
+            // ------------- log打印工具 -------------
+            logger                       : 'com.orhanobut:logger:1.15',
+    ]
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/common_layout"
+    android:orientation="horizontal"
+    tools:ignore="all">
+
+    <ImageView
+        android:id="@+id/btnLeftImage"
+        style="@style/common_image_left"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/btnLeftText"
+        style="@style/common_text_left"
+        android:visibility="gone"
+        tools:text="leftText" />
+
+    <com.custom.frame.ui.views.CustomRadioButton
+        android:id="@+id/tvTitle"
+        style="@style/common_title_text"
+        android:drawablePadding="@dimen/distance_5"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        tools:text="Title" />
+
+    <ImageView
+        android:id="@+id/btnOneRightImage"
+        style="@style/common_image_right"
+        android:scaleType="fitCenter" />
+
+    <ImageView
+        android:id="@+id/btnSecondRightImage"
+        android:layout_width="@dimen/distance_45"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/btnOneRightImage"
+        android:padding="12.5dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_launcher"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/btnRightText"
+        style="@style/common_text_right"
+        android:visibility="gone"
+        tools:text="rightTitle" />
+
+</RelativeLayout>

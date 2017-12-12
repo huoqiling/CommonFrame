@@ -1,0 +1,99 @@
+<resources>
+
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowAnimationStyle">@style/common_activity_anim</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="BaseAppTheme">
+
+    </style>
+
+
+    <!-- animation 样式 -->
+    <style name="common_activity_anim" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+
+    <!-- 标题栏 -->
+    <style name="common_layout">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/distance_45</item>
+    </style>
+
+    <!-- 标题栏后退按钮 -->
+    <style name="common_image_left">
+        <item name="android:layout_width">@dimen/distance_45</item>
+        <item name="android:layout_height">@dimen/distance_45</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingLeft">@dimen/distance_12</item>
+        <item name="android:paddingRight">@dimen/distance_12</item>
+        <item name="android:src">@mipmap/iv_arrow_left</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <!-- 标题栏左边按钮 -->
+    <style name="common_text_left">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/distance_45</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:padding">@dimen/distance_12</item>
+        <item name="android:textSize">@dimen/textSize_14</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- 标题栏中间 TextView -->
+    <style name="common_title_text">
+        <item name="android:textSize">@dimen/textSize_17</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginRight">@dimen/distance_10</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <!-- 标题栏右边图片 -->
+    <style name="common_image_right">
+        <item name="android:layout_width">@dimen/distance_45</item>
+        <item name="android:layout_height">@dimen/distance_45</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:padding">12.5dp</item>
+        <item name="android:src">@mipmap/ic_launcher</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+
+    <!-- 标题栏右边按钮 -->
+    <style name="common_text_right">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/distance_45</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:padding">@dimen/distance_12</item>
+        <item name="android:textSize">@dimen/textSize_14</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+</resources>
