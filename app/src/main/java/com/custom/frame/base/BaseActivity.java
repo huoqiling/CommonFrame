@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.custom.frame.CustomApp;
 import com.custom.frame.R;
@@ -33,6 +34,7 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomTi
     private CustomTitleBar titleBar;
     private FrameLayout flContainer;
     private Unbinder unbinder;
+    private long exitTime = 0; //双击退出函数变量
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomTi
         titleBar.setOnCustomTitleBarListener(this);
     }
 
-    private void initBase(){
+    private void initBase() {
         CustomApp.getInstance().addActivity(this);
         setContentLayout(getLayoutId());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
@@ -67,7 +69,7 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomTi
             setStatusBar(R.color.colorPrimary);
         }
 
-        if(useEventBus()){
+        if (useEventBus()) {
             EventBus.getDefault().register(this);
         }
     }
@@ -105,7 +107,9 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomTi
         return getResources().getDimensionPixelSize(resourceId);
     }
 
-    protected abstract @LayoutRes int getLayoutId();
+    protected abstract
+    @LayoutRes
+    int getLayoutId();
 
     protected abstract void initView();
 
@@ -146,13 +150,50 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomTi
     }
 
     @Override
+    public void onBackPressed() {
+        if (doubleExitAppEnable()) {
+            exitAppDoubleClick();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+
+    public boolean doubleExitAppEnable() {
+        return false;
+    }
+
+    /**
+     * 双击退出APP
+     */
+    private void exitAppDoubleClick() {
+
+        if (System.currentTimeMillis() - exitTime > 2000) {
+            Toast.makeText(this, R.string.exit_app, Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            exitApp();
+        }
+    }
+
+    /**
+     * 退出APP
+     */
+    private void exitApp() {
+
+        super.onBackPressed();
+        System.exit(0);
+        android.os.Process.killProcess(android.os.Process.myPid());
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         CustomApp.getInstance().removeActivity(this);
         if (null != unbinder) {
             unbinder.unbind();
         }
-        if(useEventBus()){
+        if (useEventBus()) {
             EventBus.getDefault().unregister(this);
         }
     }

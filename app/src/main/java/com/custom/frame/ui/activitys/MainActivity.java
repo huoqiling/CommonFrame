@@ -3,7 +3,7 @@ package com.custom.frame.ui.activitys;
 import com.custom.frame.R;
 import com.custom.frame.base.BaseActivity;
 
-public class MainActivity extends BaseActivity{
+public class MainActivity extends BaseActivity {
 
 
     @Override
@@ -15,6 +15,11 @@ public class MainActivity extends BaseActivity{
     protected void initView() {
         getTitleBar().setTitleText("首页");
         getTitleBar().hideLeftImage();
+    }
+
+    @Override
+    public boolean doubleExitAppEnable() {
+        return true;
     }
 
     @Override
