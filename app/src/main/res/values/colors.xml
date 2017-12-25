@@ -12,6 +12,7 @@
 
     <!--灰色-->
     <color name="gray_f5f6fa">#F5F6FA</color>
+    <color name="gray_cccccc">#cccccc</color>
 
     <!--黑色-->
     <color name="black_191a">#19191a</color>
