@@ -49,6 +49,7 @@ ext {
 
             // ------------- 弹窗-------------
             aVLoadingIndicatorView       : 'com.wang.avi:library:2.1.3',
+            popwindowLibrary              : 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1',
 
             // -------------权限询问工具 -------------
             easypermissions              : 'pub.devrel:easypermissions:0.4.2',

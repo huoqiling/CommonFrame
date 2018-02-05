@@ -87,6 +87,7 @@ dependencies {
 
     // ------------- 弹窗-------------
     compile dependencies.aVLoadingIndicatorView
+    compile dependencies.popwindowLibrary
 
     // -------------权限询问工具-------------
     compile dependencies.easypermissions

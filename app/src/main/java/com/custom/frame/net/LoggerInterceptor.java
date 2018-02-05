@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import com.orhanobut.logger.Logger;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 
 import okhttp3.Headers;
 import okhttp3.Interceptor;
@@ -78,7 +79,7 @@ public class LoggerInterceptor implements Interceptor {
                 if (mediaType != null) {
                     if (isText(mediaType)) {
                         String resp = body.string();
-                        Logger.json(resp);
+                        Logger.json(URLDecoder.decode(resp, "utf-8"));
                         body = ResponseBody.create(mediaType, resp);
                         return response.newBuilder().body(body).build();
                     } else {
