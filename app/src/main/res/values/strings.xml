@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MyFrame</string>
     <string name="exit_app">再按一次退出程序</string>
+    <string name="previewPicturePermissions">图片预览需要以下权限:\n\n1.访问设备上的照片</string>
+    <string name="savePicturePermissions">保存图片需要读写权限</string>
+    <string name="error_picture_permissions">您拒绝了「图片选择」所需要的相关权限!</string>
+    <string name="refusePicturePermissions">您拒绝了保存图片需要相关权限</string>
 </resources>

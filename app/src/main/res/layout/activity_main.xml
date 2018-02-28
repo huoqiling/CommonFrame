@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray_f5f6fa"
     android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <cn.bingoogolapple.photopicker.widget.BGANinePhotoLayout
+                android:id="@+id/photoLayout"
+                style="@style/MatchWrap"
+                android:layout_gravity="center"
+                app:bga_npl_itemCornerRadius="3dp"
+                app:bga_npl_itemSpanCount="4"
+                app:bga_npl_itemWhiteSpacing="10dp"
+                app:bga_npl_itemWidth="0dp"
+                app:bga_npl_otherWhiteSpacing="30dp"
+                app:bga_npl_showAsLargeWhenOnlyOne="true" />
+
+        </FrameLayout>
+
+    </ScrollView>
 
 </LinearLayout>

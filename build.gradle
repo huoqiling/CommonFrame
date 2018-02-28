@@ -16,8 +16,11 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
         maven { url "https://jitpack.io" }
+        maven { url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/" }
+
+        jcenter()
+        google()
     }
 }
 

@@ -104,4 +104,7 @@ dependencies {
     // ------------- log打印工具 -------------
     compile dependencies.logger
 
+    compile 'cn.bingoogolapple:bga-photopicker:1.2.8@aar'
+    compile 'cn.bingoogolapple:bga-baseadapter:1.2.7@aar'
+
 }
